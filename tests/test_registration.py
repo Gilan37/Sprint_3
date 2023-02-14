@@ -13,6 +13,9 @@ def test_registration_success(driver, register_user):
 
 
 def test_password_error(driver, create_wrong_password):
+    # Открываем страницу с формой регистрации
+    driver.get('https://stellarburgers.nomoreparties.site/register')
+
     # Вводим Пароль меньше 6 символов
     driver.find_element(By.NAME, "Пароль").send_keys(create_wrong_password)
 
